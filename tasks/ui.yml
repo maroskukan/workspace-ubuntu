@@ -39,11 +39,11 @@
     mode: 0755
   become: true
 
-- name: Ensure Window Color gtk theme is set to Yaru Dark.
+- name: Ensure Window Color gtk theme is set to Nordic.
   command: gsettings set org.gnome.desktop.interface gtk-theme 'Nordic'
   changed_when: false
 
-- name: Ensure Window Color wm theme is set to Adwaita.
+- name: Ensure Window Color wm theme is set to Nordic.
   command: gsettings set org.gnome.desktop.wm.preferences theme 'Nordic'
   changed_when: false
 
