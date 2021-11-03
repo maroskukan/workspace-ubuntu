@@ -5,6 +5,12 @@
     - default.config.yml
 
   pre_tasks:
+    - name: Include custom configuration.
+      include_vars: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/config.yml"
+      tags: ['always']
+
     - name: Ensure atp cache is updated.
       apt:
         update_cache: true
