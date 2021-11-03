@@ -1,0 +1,14 @@
+---
+- name: Ensure Unity Launcher provides favorite apps.
+  command: >
+    gsettings set org.gnome.shell favorite-apps "[
+    'org.gnome.Nautilus.desktop',
+    'org.gnome.Terminal.desktop',
+    'slack_slack.desktop',
+    'discord_discord.desktop',
+    'brave_brave.desktop',
+    'spotify_spotify.desktop',
+    'code_code.desktop',
+    'postman_postman.desktop']"
+  changed_when: false
+

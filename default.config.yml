@@ -1,0 +1,57 @@
+---
+downloads: /tmp
+
+configure_ui: true
+
+install_base: true
+base_packages:
+  - bat
+  - curl
+  - gh
+  - git
+  - iperf
+  - jq
+  - nmap
+  - openssl
+  - packer
+  - shellcheck
+  - terraform
+  - tree
+  - unzip
+  - vagrant
+  - vault
+  - zsh
+
+install_extra: true
+extra_strict_packages:
+  - brave
+  - discord
+  - postman
+  - spotify
+  - vlc
+
+extra_classic_packages:
+  - code
+  - slack
+
+install_vbox: true
+vbox_packages:
+  - virtualbox
+
+install_docker: true
+docker_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-compose
+
+vscode_extensions:
+  - vscode-icons-team.vscode-icons
+  - zhuangtongfa.material-theme
+  - redhat.ansible
+  - redhat.vscode-yaml
+  - redhat.vscode-xml
+  - shardulm94.trailing-spaces
+  - eamodio.gitlens
+  - ms-python.python
+  - ms-python.vscode-pylance

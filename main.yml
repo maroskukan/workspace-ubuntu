@@ -1,0 +1,29 @@
+---
+- hosts: all
+
+  vars_files:
+    - default.config.yml
+
+  pre_tasks:
+    - name: Ensure atp cache is updated.
+      apt:
+        update_cache: true
+        cache_valid_time: 3600
+      become: true
+
+  tasks:
+    - import_tasks: tasks/ui.yml
+      tags: ['ui-theme']
+      when: configure_ui
+
+    - import_tasks: tasks/base-packages.yml
+      tags: ['base-packages']
+      when: install_base
+
+    - import_tasks: tasks/extra-packages.yml
+      tags: ['extra-packages']
+      when: install_extra
+
+    - import_tasks: tasks/launcher.yml
+      tags: ['ui-launcher']
+      when: configure_ui

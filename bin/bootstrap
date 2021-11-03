@@ -1,0 +1,50 @@
+#!/bin/sh
+
+echo "
+###############################################################################
+# Ensure that package list is current and update packages                     #
+###############################################################################
+"
+sudo apt update && sudo apt upgrade -y
+
+echo "
+###############################################################################
+# Ensure Python3.8+ is present                                                #
+###############################################################################
+"
+if python3 -c 'import sys; assert sys.version_info >= (3,8)' 2>/dev/null; then
+    echo "Python 3.8+ already installed."
+else
+    sudo apt install -y python3
+fi
+
+echo "
+###############################################################################
+# Ensure Pip3 is present                                                      #
+###############################################################################
+"
+if [ "$(pip3 --version 2>/dev/null)" ]; then
+    echo "Pip3 already installed."
+else
+    sudo apt install -y python3-pip
+fi
+
+echo "
+###############################################################################
+# Ensure Ansible is present                                                   #
+###############################################################################
+"
+if [ "$(ansible --version 2>/dev/null)" ]; then
+    echo "Ansible already installed."
+else
+    sudo apt-add-repository -y --update ppa:ansible/ansible &&
+    sudo apt update &&
+    sudo apt install ansible -y  
+fi
+
+echo "
+###############################################################################
+# Execute Main Playbook                                                       #
+###############################################################################
+"
+ansible-playbook main.yml --ask-become-pass

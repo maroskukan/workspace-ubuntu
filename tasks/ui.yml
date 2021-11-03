@@ -1,0 +1,60 @@
+---
+- name: Ensure repository for papirus icon theme is present.
+  apt_repository:
+    repo: ppa:papirus/papirus
+    state: present
+  become: true
+
+- name: Ensure papirus icon theme is installed.
+  apt:
+    name: papirus-icon-theme
+    state: present
+  become: true
+
+- name: Ensure gnome-tweaks are installed.
+  apt:
+    name: gnome-tweaks
+    state: present
+  become: true
+
+- name: Ensure bing wallpaper is present.
+  snap:
+    name: bing-wall
+    state: present
+  become: true
+
+- name: Ensure Nordic theme archive is downloaded.
+  get_url:
+    url: https://github.com/EliverLara/Nordic/releases/download/2.0.0/Nordic.tar.xz
+    dest: "{{ downloads }}/Nordic.tar.xz"
+
+- name: Ensure Nordic theme archive is expanded.
+  unarchive:
+    src: "{{ downloads }}/Nordic.tar.xz"
+    dest: /usr/share/themes/
+    remote_src: true
+    creates: /usr/share/themes/Nordic/README.md
+    owner: root
+    group: root
+    mode: 0755
+  become: true
+
+- name: Ensure Window Color gtk theme is set to Yaru Dark.
+  command: gsettings set org.gnome.desktop.interface gtk-theme 'Nordic'
+  changed_when: false
+
+- name: Ensure Window Color wm theme is set to Adwaita.
+  command: gsettings set org.gnome.desktop.wm.preferences theme 'Nordic'
+  changed_when: false
+
+- name: Ensure Icon theme is set to Papirus.
+  command: gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
+  changed_when: false
+
+- name: Ensure Cursor Color theme is set to Yaru.
+  command: gsettings set org.gnome.desktop.interface cursor-theme 'Yaru'
+  changed_when: false
+
+- name: Ensure bind wallpaper is set.
+  command: bing-wall --set
+  changed_when: false

@@ -1,0 +1,56 @@
+---
+- name: Ensure apt key for docker is present.
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+  become: true
+  when: install_docker
+
+- name: Ensure repository for docker is present.
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu {{ ansible_lsb.codename }} stable
+    state: present
+  become: true
+  when: install_docker
+
+- name: Ensure docker and docker tools are present.
+  apt:
+    name: "{{ docker_packages }}"
+    state: present
+  become: true
+  when: install_docker
+
+- name: Ensure extra snap strict packages are present.
+  snap:
+    name: "{{ extra_strict_packages }}"
+    state: present
+  become: true
+
+- name: Ensure extra snap classic packages are present.
+  snap:
+    name: "{{ extra_classic_packages }}"
+    classic: true
+    state: present
+  become: true
+
+- name: Ensure vbox and vbox tools are present.
+  apt:
+    name: "{{ vbox_packages }}"
+    state: present
+  become: true
+  when: install_vbox
+
+- name: Ensure megasync package is downloaded.
+  get_url:
+    url: "https://mega.nz/linux/MEGAsync/xUbuntu_{{ ansible_distribution_version}}/amd64/megasync_4.5.3-2.1_amd64.deb"
+    dest: "{{ downloads }}/megasync_4.5.3-2.1_amd64.deb"
+
+- name: Ensure megasync is present.
+  apt:
+    deb: "{{ downloads }}/megasync_4.5.3-2.1_amd64.deb"
+  become: true
+
+- name: Install VS Code Extensions.
+  command: code --install-extension {{ item }}
+  with_items: "{{ vscode_extensions }} "
+  changed_when: false
