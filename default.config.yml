@@ -55,3 +55,4 @@ vscode_extensions:
   - eamodio.gitlens
   - ms-python.python
   - ms-python.vscode-pylance
+  - yzhang.markdown-all-in-one
