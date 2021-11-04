@@ -12,3 +12,18 @@
     'postman_postman.desktop']"
   changed_when: false
 
+- name: Ensure Unity Launcher is positioned to bottom.
+  command: gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'BOTTOM'
+  changed_when: false
+
+- name: Ensure Unity Launcher height extending is disabled.
+  command: gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+  changed_when: false
+
+- name: Ensure Unity Launcher background color is black.
+  command: gsettings set org.gnome.shell.extensions.dash-to-dock background-color '#000000'
+  changed_when: false
+
+- name: Ensure Unity Layncher background opacity is set to 90%.
+  command: gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.9
+  changed_when: false
