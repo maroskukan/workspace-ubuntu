@@ -12,6 +12,7 @@ base_packages:
   - iperf
   - jq
   - nmap
+  - neofetch
   - openssl
   - packer
   - shellcheck

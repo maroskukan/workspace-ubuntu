@@ -22,7 +22,7 @@ When ready, navigate to repository root and execute the bootstrap script.
 bin/bootstrap
 ```
 
-Once you first ran the bootstrap script, you can use use `apply` shell script. This will skip steps 1-4 and just execute the playbook. This is useful when you want to reapply the playbook later.
+After first run the bootstrap script, you can use the `apply` shell script. This will skip steps 1-4 and just execute the playbook. This is useful when you want to reapply the playbook later.
 
 ```bash
 bin/apply
@@ -32,12 +32,19 @@ bin/apply
 
 ### Default
 
-These following UI changes will be applied:
+These UI changes will be applied:
 
 - [Papirus Icon Theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - [Nordic theme](https://github.com/EliverLara/Nordic)
 - [Yaru cursor](https://github.com/ubuntu/yaru)
 - [Bind-wall](https://github.com/keshavbhatt/BingWall)
+
+These Unity Launcher changes will be applied:
+
+- Predefined application icon order
+- Location is set to bottom
+- Hight extending is disabled
+- Color is set to black with transparency set to 90%
 
 These tools and applications will be installed:
 
@@ -47,6 +54,7 @@ These tools and applications will be installed:
 - iperf
 - jq
 - nmap
+- neofetch
 - openssl
 - [packer](https://www.packer.io/)
 - shellcheck
