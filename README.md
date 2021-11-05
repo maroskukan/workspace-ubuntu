@@ -43,7 +43,7 @@ These Unity Launcher changes will be applied:
 
 - Predefined application icon order
 - Location is set to bottom
-- Hight extending is disabled
+- Height extending is disabled
 - Color is set to black with transparency set to 90%
 
 These tools and applications will be installed:
@@ -87,3 +87,28 @@ These VScode extensions will be installed:
 - [python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 - [vscode-pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 - [markdown-all-in-one](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+
+These build tools and applications will be installed for Python development.
+
+- make
+- build-essential
+- libssl-dev
+- zlib1g-dev
+- libbz2-dev
+- libreadline-dev
+- libsqlite3-dev
+- wget
+- curl
+- llvm
+- libncursesw5-dev
+- xz-utils
+- tk-dev
+- libxml2-dev
+- libxmlsec1-dev
+- libffi-dev
+- liblzma-dev
+- [pyenv](https://github.com/pyenv/pyenv/)
+
+The following pyenv plugins will be installed.
+
+- [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
