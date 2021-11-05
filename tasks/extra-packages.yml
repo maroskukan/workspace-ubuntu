@@ -20,6 +20,13 @@
   become: true
   when: install_docker
 
+- name: Ensure the current user is part of docker group.
+  user:
+    name: "{{ansible_user|default(lookup('env', 'USER')) }}"
+    groups: docker
+    append: yes
+  become: true
+
 - name: Ensure extra snap strict packages are present.
   snap:
     name: "{{ extra_strict_packages }}"
