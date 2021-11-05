@@ -1,0 +1,44 @@
+---
+- name: Ensure build packages used by pyenv are present.
+  apt:
+    name: "{{ build_packages }}"
+    state: present
+  become: true
+
+- name: Check if .pyenv exists.
+  stat:
+    path: $HOME/.pyenv
+  register: stat_rc_result
+
+- name: Ensure pyenv is present.
+  shell: >
+    curl -L
+    https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer |
+    bash
+  when: not stat_rc_result.stat.exists
+
+- name: Ensure pyenv virtualenv is present.
+  git:
+    repo: https://github.com/pyenv/pyenv-virtualenv.git
+    dest: $HOME/.pyenv/plugins/pyenv-virtualenv
+    version: master
+
+- name: Ensure pyenv is added to shell environment.
+  lineinfile:
+    dest: $HOME/.zshrc
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    state: present
+  loop:
+    - {regexp: '^export PYENV_ROOT',
+       line: 'export PYENV_ROOT="$HOME/.pyenv"'}
+    - {regexp: '^export PATH',
+       line: 'export PATH="$PYENV_ROOT/bin:$PATH"'}
+    - {regexp: '^eval "$(pyenv init --path)"',
+       line: 'eval "$(pyenv init --path)"'}
+    - {regexp: '^eval "$(pyenv init -)"',
+       line: 'eval "$(pyenv init -)"'}
+    - {regexp: '^export PYENV_VIRTUALENV_DISABLE_PROMPT',
+       line: 'export PYENV_VIRTUALENV_DISABLE_PROMPT=1'}
+    - {regexp: '^eval "$(pyenv virtualenv-init -)"',
+       line: 'eval "$(pyenv virtualenv-init -)"'}

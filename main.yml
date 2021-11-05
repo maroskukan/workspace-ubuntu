@@ -33,3 +33,11 @@
     - import_tasks: tasks/launcher.yml
       tags: ['ui-launcher']
       when: configure_ui
+
+    - import_tasks: tasks/terminal.yml
+      tags: ['ui-terminal']
+      when: configure_ui
+
+    - import_tasks: tasks/python-dev.yml
+      tags: ['python-dev']
+      when: install_python_dev
