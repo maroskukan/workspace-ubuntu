@@ -29,6 +29,7 @@ extra_strict_packages:
   - postman
   - spotify
   - vlc
+  - zoom-client
 
 extra_classic_packages:
   - code

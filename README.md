@@ -73,6 +73,8 @@ These tools and applications will be installed:
 - [slack](https://slack.com/)
 - [virtualbox](https://www.virtualbox.org/)
 - [docker](https://www.docker.com/)
+- megasync
+- zoom-client
 - gnome-tweaks
 
 These VScode extensions will be installed:
