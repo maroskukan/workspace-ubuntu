@@ -12,6 +12,7 @@ base_packages:
   - jq
   - nmap
   - neofetch
+  - openconnect
   - openssl
   - packer
   - shellcheck
