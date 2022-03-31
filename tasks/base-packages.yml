@@ -11,13 +11,13 @@
     state: present
   become: true
 
-- name: Ensure repository for gh cli is present.
+- name: Ensure repository for hashicorp is present.
   apt_repository:
     repo: deb https://apt.releases.hashicorp.com {{ ansible_lsb.codename }}  main
     state: present
   become: true
 
-- name: Ensure repository for vagrant is present.
+- name: Ensure repository for github cli is present.
   apt_repository:
     repo: deb https://cli.github.com/packages {{ ansible_lsb.codename }} main
     state: present
