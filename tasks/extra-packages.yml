@@ -47,6 +47,13 @@
   become: true
   when: install_vbox
 
+- name: Ensure java runtime is present.
+  apt:
+    name: "{{ java_packages }}"
+    state: present
+  become: true
+  when: install_java
+
 - name: Ensure megasync is present.
   apt:
     deb: "https://mega.nz/linux/MEGAsync/xUbuntu_{{ ansible_distribution_version }}/amd64/megasync_4.6.3-5.1_amd64.deb"

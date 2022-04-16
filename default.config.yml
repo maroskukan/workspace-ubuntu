@@ -78,3 +78,7 @@ build_packages:
   - libxmlsec1-dev
   - libffi-dev
   - liblzma-dev
+
+install_java: true
+java_packages:
+  - default-jre
