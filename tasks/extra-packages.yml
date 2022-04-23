@@ -56,9 +56,16 @@
 
 - name: Ensure megasync is present.
   apt:
-    deb: "https://mega.nz/linux/MEGAsync/xUbuntu_{{ ansible_distribution_version }}/amd64/megasync_4.6.3-5.1_amd64.deb"
+    name: megasync
+    #deb: "https://mega.nz/linux/MEGAsync/xUbuntu_{{ ansible_distribution_version }}/amd64/megasync_4.6.3-5.1_amd64.deb"
   become: true
-  ignore_errors: true
+  #ignore_errors: true
+
+- name: Ensure Raspberry Pi Imager is present.
+  apt:
+    deb: "https://downloads.raspberrypi.org/imager/imager_latest_amd64.deb"
+  become: true
+
 
 - name: Install VS Code Extensions.
   command: code --install-extension {{ item }}
