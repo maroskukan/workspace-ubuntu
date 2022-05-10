@@ -88,3 +88,6 @@ ruby_packages:
   - build-essential
   - ruby-full
   - zlib1g-dev
+ruby_gems:
+  - bundler
+  - jekyll

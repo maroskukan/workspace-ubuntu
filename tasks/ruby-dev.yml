@@ -1,6 +1,31 @@
 ---
 - name: Ensure ruby packages are present.
-  apt:
+  ansible.builtin.apt:
     name: "{{ ruby_packages }}"
     state: present
   become: true
+
+- name: Ensure gems install location is in user's home.
+  ansible.builtin.lineinfile:
+    dest: $HOME/.zshrc
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    state: present
+  loop:
+    - {regexp: '^# Install Ruby Gems to ~/gems',
+       line: '# Install Ruby Gems to ~/gems'}
+    - {regexp: '^export GEM_HOME',
+       line: 'export GEM_HOME="$HOME/gems"'}
+    - {regexp: '^export PATH="$HOME/gems/bin:$PATH"',
+       line: 'export PATH="$HOME/gems/bin:$PATH"'}
+
+- name: Ensure gems are installed.
+  community.general.gem:
+    name: "{{ item }}"
+    bindir: "{{ lookup('env', 'HOME') }}/gems/bin"
+    state: present
+  loop: "{{ ruby_gems }}"
+
+- name: Ensure your environment variables are reloaded.
+  ansible.builtin.debug:
+    msg: Reload your environment with source ~/.zshrc command.
