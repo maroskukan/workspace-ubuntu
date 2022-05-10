@@ -41,3 +41,7 @@
     - import_tasks: tasks/python-dev.yml
       tags: ['python-dev']
       when: install_python_dev
+
+    - import_tasks: tasks/ruby-dev.yml
+      tags: ['ruby-dev']
+      when: install_ruby_dev

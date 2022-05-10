@@ -82,3 +82,9 @@ build_packages:
 install_java: true
 java_packages:
   - default-jre
+
+install_ruby_dev: true
+ruby_packages:
+  - build-essential
+  - ruby-full
+  - zlib1g-dev

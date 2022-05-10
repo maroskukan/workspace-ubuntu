@@ -1,0 +1,6 @@
+---
+- name: Ensure ruby packages are present.
+  apt:
+    name: "{{ ruby_packages }}"
+    state: present
+  become: true
