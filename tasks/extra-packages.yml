@@ -8,7 +8,7 @@
 
 - name: Ensure repository for docker is present.
   apt_repository:
-    repo: deb https://download.docker.com/linux/ubuntu {{ ansible_lsb.codename }} stable
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_lsb.codename }} stable
     state: present
   become: true
   when: install_docker
