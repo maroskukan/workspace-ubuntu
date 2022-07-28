@@ -58,6 +58,7 @@ vscode_extensions:
   - ms-python.python
   - ms-python.vscode-pylance
   - yzhang.markdown-all-in-one
+  - ms-azuretools.vscode-docker
 
 install_python_dev: true
 build_packages:
