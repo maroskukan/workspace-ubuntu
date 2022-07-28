@@ -23,10 +23,16 @@
     state: present
   become: true
 
+- name: Check if Nordic theme is present.
+  ansible.builtin.stat:
+    path: /usr/share/themes/Nordic/README.md
+  register: nordic
+
 - name: Ensure Nordic theme archive is downloaded.
   get_url:
     url: https://github.com/EliverLara/Nordic/releases/download/2.0.0/Nordic.tar.xz
     dest: "{{ downloads }}/Nordic.tar.xz"
+  when: not nordic.stat.exists
 
 - name: Ensure Nordic theme archive is expanded.
   unarchive:
@@ -38,6 +44,7 @@
     group: root
     mode: 0755
   become: true
+  when: not nordic.stat.exists
 
 - name: Ensure Window Color gtk theme is set to Nordic.
   command: gsettings set org.gnome.desktop.interface gtk-theme 'Nordic'
