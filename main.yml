@@ -11,7 +11,7 @@
         - "{{ playbook_dir }}/config.yml"
       tags: ['always']
 
-    - name: Ensure atp cache is updated.
+    - name: Ensure apt cache is updated.
       apt:
         update_cache: true
         cache_valid_time: 3600
