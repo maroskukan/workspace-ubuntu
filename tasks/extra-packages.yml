@@ -66,7 +66,6 @@
     deb: "https://downloads.raspberrypi.org/imager/imager_latest_amd64.deb"
   become: true
 
-
 - name: Install VS Code Extensions.
   command: code --install-extension {{ item }}
   with_items: "{{ vscode_extensions }}"
