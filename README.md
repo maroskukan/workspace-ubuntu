@@ -51,6 +51,7 @@ These tools and applications will be installed:
 - [bat](https://github.com/sharkdp/bat)
 - curl
 - [gh](https://github.com/cli/cli)
+- [gnome-tweaks](https://wiki.gnome.org/Apps/Tweaks)
 - iperf
 - jq
 - nmap
@@ -66,6 +67,7 @@ These tools and applications will be installed:
 - zsh
 - [brave](https://brave.com/)
 - [discord](https://discord.com/)
+- [rpi-imager](https://www.raspberrypi.com/software/)
 - [postman](https://www.postman.com/)
 - [spotify](https://www.spotify.com/)
 - [vlc](https://www.videolan.org/vlc/)
@@ -74,8 +76,7 @@ These tools and applications will be installed:
 - [virtualbox](https://www.virtualbox.org/)
 - [docker](https://www.docker.com/)
 - megasync
-- zoom-client
-- gnome-tweaks
+- [zoom-client](https://zoom.us/support/download)
 
 These VScode extensions will be installed:
 
@@ -114,3 +115,13 @@ These build tools and applications will be installed for Python development.
 The following pyenv plugins will be installed.
 
 - [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
+
+These build tools and applications will be installed for Ruby development.
+
+- build-essential
+- ruby-full
+- zlib1g-dev
+
+The following Ruby gems will be installed.
+- bundler
+- jekyll
