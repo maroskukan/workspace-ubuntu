@@ -4,6 +4,8 @@ This repository contains wrapper scripts and Ansible playbooks that ensures that
 
 This project was inspired by Jeff Geerling's [Mac Development Ansible Playbook](https://github.com/geerlingguy/mac-dev-playbook).
 
+![theme-after](images/theme-after_thumbnail.png)(images/theme-after.png)
+
 ## Installation
 
 Clone or download this repository into your local machine. The wrapper scripts are located in `bin/` directory. As always, before execution I encourage you to explore content of any script.
