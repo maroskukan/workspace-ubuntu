@@ -34,3 +34,16 @@
     name: "{{ base_packages }}"
     state: present
   become: true
+
+- name: Check if batcat is present.
+  ansible.builtin.stat:
+    path: /usr/bin/batcat
+  register: batcat
+
+- name: Create a symlink for bat.
+  ansible.builtin.file:
+    src: /usr/bin/batcat
+    dest: /usr/local/bin/bat
+    state: link
+  become: true
+  when: batcat.stat.exists
