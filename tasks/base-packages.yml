@@ -1,36 +1,42 @@
 ---
 - name: Ensure apt key for gh cli is present.
-  apt_key:
+  ansible.builtin.apt_key:
     keyserver: keyserver.ubuntu.com
     id: C99B11DEB97541F0
   become: true
 
 - name: Ensure apt key for hashicorp is present.
-  apt_key:
+  ansible.builtin.apt_key:
     url: https://apt.releases.hashicorp.com/gpg
     state: present
   become: true
 
 - name: Ensure repository for hashicorp is present.
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: deb https://apt.releases.hashicorp.com {{ ansible_lsb.codename }}  main
     state: present
   become: true
 
 - name: Ensure repository for github cli is present.
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: deb https://cli.github.com/packages {{ ansible_lsb.codename }} main
     state: present
   become: true
 
 - name: Ensure repository for git is present.
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: ppa:git-core/ppa
     state: present
   become: true
 
+- name: Ensure repository for kodi is present.
+  ansible.builtin.apt_repository:
+    repo: ppa:team-xbmc/ppa
+    state: present
+  become: true
+
 - name: Ensure base apt packages are present.
-  apt:
+  ansible.builtin.apt:
     name: "{{ base_packages }}"
     state: present
   become: true

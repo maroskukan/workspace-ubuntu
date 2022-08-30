@@ -10,6 +10,7 @@ base_packages:
   - git
   - iperf
   - jq
+  - kodi
   - nmap
   - neofetch
   - openconnect

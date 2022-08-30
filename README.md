@@ -56,6 +56,7 @@ These tools and applications will be installed:
 - [gnome-tweaks](https://wiki.gnome.org/Apps/Tweaks)
 - iperf
 - jq
+- [kodi](kodi.tv)
 - nmap
 - neofetch
 - openssl
