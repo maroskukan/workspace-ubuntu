@@ -34,7 +34,7 @@ extra_strict_packages:
   - zoom-client
 
 extra_classic_packages:
-  - code
+  - codium
   - slack
 
 install_vbox: true

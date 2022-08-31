@@ -8,7 +8,7 @@
     'discord_discord.desktop',
     'brave_brave.desktop',
     'spotify_spotify.desktop',
-    'code_code.desktop',
+    'codium_codium.desktop',
     'postman_postman.desktop']"
   changed_when: false
 
