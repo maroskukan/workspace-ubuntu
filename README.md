@@ -128,3 +128,28 @@ These build tools and applications will be installed for Ruby development.
 The following Ruby gems will be installed.
 - bundler
 - jekyll
+
+
+## Tips
+
+### Boot Options
+
+On certain laptop models, it happens that OS won't boot properly stopping with an error `Loading initial ramdisk`. Solution for this is to add `dis_ucode_ldr` to the default Grub boot arguments located at `/etc/default/grub`.
+
+From:
+
+```bash
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+```
+
+To:
+
+```bash
+GRUB_CMDLINE_LINUX_DEFAULT="quite splash dis_ucode_ldr"
+```
+
+Then
+
+```bash
+sudo update-grub
+```
