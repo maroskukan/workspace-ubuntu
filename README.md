@@ -61,7 +61,7 @@ These tools and applications will be installed:
 - neofetch
 - openssl
 - [packer](https://www.packer.io/)
-- pass
+- [pass](https://www.passwordstore.org/)
 - shellcheck
 - [terraform](https://www.terraform.io/)
 - tree
