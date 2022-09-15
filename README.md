@@ -61,6 +61,7 @@ These tools and applications will be installed:
 - neofetch
 - openssl
 - [packer](https://www.packer.io/)
+- pass
 - shellcheck
 - [terraform](https://www.terraform.io/)
 - tree
@@ -153,3 +154,25 @@ Then
 ```bash
 sudo update-grub
 ```
+
+### Login Manager
+
+To change the default login manager from `gdm3` to `lightdm` follow these steps:
+
+```bash
+# Install lightdm
+sudo apt install -y lightdm
+
+# If Login Manager selection dialog was not shown automatically
+sudo dpkg-reconfigure gdm3
+```
+
+If you want to customize the default `unity-greeter` configuration edit the `/usr/share/glib-2.0/schemas/com.canonical.unity-greeter.gschema.xml` file.
+
+Once update, recompile the schema:
+
+```bash
+sudo glib-compile-schemas /usr/share/glib-2.0/schemas
+```
+
+This should read the xml file and generate `/usr/share/glib-2.0/schemas/gschemas.compiled`.
