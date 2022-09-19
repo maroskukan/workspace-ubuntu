@@ -23,7 +23,9 @@ base_packages:
   - unzip
   - vagrant
   - vault
+  - vim
   - zsh
+  - xclip
 
 install_extra: true
 extra_strict_packages:

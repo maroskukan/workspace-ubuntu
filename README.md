@@ -75,12 +75,15 @@ These tools and applications will be installed:
 - [postman](https://www.postman.com/)
 - [spotify](https://www.spotify.com/)
 - [vlc](https://www.videolan.org/vlc/)
+- [vim](https://www.vim.org/)
 - [code](https://code.visualstudio.com/)
 - [slack](https://slack.com/)
 - [virtualbox](https://www.virtualbox.org/)
 - [docker](https://www.docker.com/)
 - megasync
 - [zoom-client](https://zoom.us/support/download)
+- [xclip](https://github.com/astrand/xclip)
+
 
 These VScode extensions will be installed:
 
