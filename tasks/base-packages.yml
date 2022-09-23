@@ -2,7 +2,7 @@
 - name: Ensure apt key for gh cli is present.
   ansible.builtin.apt_key:
     keyserver: keyserver.ubuntu.com
-    id: C99B11DEB97541F0
+    id: 23F3D4EA75716059
   become: true
 
 - name: Ensure apt key for hashicorp is present.
@@ -17,11 +17,11 @@
     state: present
   become: true
 
-- name: Ensure repository for github cli is present.
-  ansible.builtin.apt_repository:
-    repo: deb https://cli.github.com/packages {{ ansible_lsb.codename }} main
-    state: present
-  become: true
+# - name: Ensure repository for github cli is present.
+#   ansible.builtin.apt_repository:
+#     repo: deb https://cli.github.com/packages {{ ansible_lsb.codename }} main
+#     state: present
+#   become: true
 
 - name: Ensure repository for git is present.
   ansible.builtin.apt_repository:
