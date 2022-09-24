@@ -23,23 +23,23 @@
     state: present
   become: true
 
-- name: Check if Nordic theme is present.
+- name: Check if Nordic darker theme is present.
   ansible.builtin.stat:
-    path: /usr/share/themes/Nordic/README.md
+    path: /usr/share/themes/Nordic-darker/README.md
   register: nordic
 
-- name: Ensure Nordic theme archive is downloaded.
+- name: Ensure Nordic darker theme archive is downloaded.
   get_url:
-    url: https://github.com/EliverLara/Nordic/releases/download/2.0.0/Nordic.tar.xz
-    dest: "{{ downloads }}/Nordic.tar.xz"
+    url: https://github.com/EliverLara/Nordic/releases/download/v2.2.0/Nordic-darker.tar.xz
+    dest: "{{ downloads }}/Nordic-darker.tar.xz"
   when: not nordic.stat.exists
 
 - name: Ensure Nordic theme archive is expanded.
   unarchive:
-    src: "{{ downloads }}/Nordic.tar.xz"
+    src: "{{ downloads }}/Nordic-darker.tar.xz"
     dest: /usr/share/themes/
     remote_src: true
-    creates: /usr/share/themes/Nordic/README.md
+    creates: /usr/share/themes/Nordic-darker/README.md
     owner: root
     group: root
     mode: 0755
@@ -47,11 +47,11 @@
   when: not nordic.stat.exists
 
 - name: Ensure Window Color gtk theme is set to Nordic.
-  command: gsettings set org.gnome.desktop.interface gtk-theme 'Nordic'
+  command: gsettings set org.gnome.desktop.interface gtk-theme 'Nordic-darker'
   changed_when: false
 
 - name: Ensure Window Color wm theme is set to Nordic.
-  command: gsettings set org.gnome.desktop.wm.preferences theme 'Nordic'
+  command: gsettings set org.gnome.desktop.wm.preferences theme 'Nordic-darker'
   changed_when: false
 
 - name: Ensure Icon theme is set to Papirus.
