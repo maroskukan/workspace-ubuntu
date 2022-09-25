@@ -1,5 +1,17 @@
 # Ubuntu Development Machine Workspace
 
+- [Ubuntu Development Machine Workspace](#ubuntu-development-machine-workspace)
+  - [Introduction](#introduction)
+  - [Installation](#installation)
+  - [Configuration](#configuration)
+    - [Default](#default)
+  - [Tips](#tips)
+    - [Boot Options](#boot-options)
+    - [Login Manager](#login-manager)
+
+
+## Introduction
+
 This repository contains wrapper scripts and Ansible playbooks that ensures that a fresh Ubuntu Linux installation has required software and configuration to support common development environment.
 
 This project was inspired by Jeff Geerling's [Mac Development Ansible Playbook](https://github.com/geerlingguy/mac-dev-playbook).
@@ -37,7 +49,7 @@ bin/apply
 These UI changes will be applied:
 
 - [Papirus Icon Theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
-- [Nordic theme](https://github.com/EliverLara/Nordic)
+- [Nordic Dark theme](https://github.com/EliverLara/Nordic)
 - [Yaru cursor](https://github.com/ubuntu/yaru)
 - [Bind-wall](https://github.com/keshavbhatt/BingWall)
 
