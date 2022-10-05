@@ -17,11 +17,11 @@
     state: present
   become: true
 
-# - name: Ensure repository for github cli is present.
-#   ansible.builtin.apt_repository:
-#     repo: deb https://cli.github.com/packages {{ ansible_lsb.codename }} main
-#     state: present
-#   become: true
+- name: Ensure repository for github cli is present.
+  ansible.builtin.apt_repository:
+    repo: deb https://cli.github.com/packages {{ ansible_lsb.codename }} main
+    state: present
+  become: true
 
 - name: Ensure repository for git is present.
   ansible.builtin.apt_repository:
