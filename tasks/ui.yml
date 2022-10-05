@@ -17,6 +17,12 @@
     state: present
   become: true
 
+- name: Ensure gnome browser connector is installed.
+  apt:
+    name: chrome-gnome-shell
+    state: present
+  become: true
+
 - name: Ensure bing wallpaper is present.
   snap:
     name: bing-wall

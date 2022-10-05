@@ -6,6 +6,7 @@ configure_ui: true
 install_base: true
 base_packages:
   - bat
+  - brave-browser
   - gh
   - git
   - iperf
@@ -29,7 +30,6 @@ base_packages:
 
 install_extra: true
 extra_strict_packages:
-  - brave
   - discord
   - postman
   - spotify
