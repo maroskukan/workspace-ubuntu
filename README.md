@@ -191,3 +191,12 @@ sudo glib-compile-schemas /usr/share/glib-2.0/schemas
 ```
 
 This should read the xml file and generate `/usr/share/glib-2.0/schemas/gschemas.compiled`.
+
+### Session Manager Shutdown timer
+
+In order to disable the default 60 seconds shutdown timer, update the following settings.
+
+```bash
+gsettings set org.gnome.SessionManager logout-prompt false
+```
+
