@@ -200,3 +200,10 @@ In order to disable the default 60 seconds shutdown timer, update the following 
 gsettings set org.gnome.SessionManager logout-prompt false
 ```
 
+### Application Dock Settings
+
+In order to switch the position of the `Show Applicatios` button on the pannel from bottom (default) to top update the following settings.
+
+```bash
+gsettings set org.gnome.shell.extensions.dash-to-dock show-apps-at-top true
+```
